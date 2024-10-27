@@ -1,0 +1,294 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+% 
+% Updated by: Armin Hadzic
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same
+% directory as this .tex file. These files provide the resume style and themes
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{banking} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage[scale=0.88, 
+			lmargin=0.95cm, 
+			rmargin=0.95cm, 
+			footnotesep=1.5cm
+			]{geometry} % Reduce document margins
+
+%bibliograph content
+\usepackage[minnames=8,
+			maxnames=10,
+			backend=bibtex,
+            style=authoryear,
+            natbib=true, 
+            style=numeric-comp,
+            sorting=ydnt               
+            ]{biblatex}
+\usepackage[unicode,
+			colorlinks=true,
+			urlcolor=blue
+			]{hyperref}    
+\usepackage{booktabs}
+
+
+% Publication subheadings
+\defbibheading{journal}{Journal Publications}
+\defbibheading{conference}{Publications}
+\defbibheading{workshop}{Workshop Publications}
+\defbibheading{abstracts}{Abstracts}
+
+% Publication bib files
+\addbibresource[label=conference]{conferences}
+\addbibresource[label=journal]{journals}
+\addbibresource[label=workshop]{workshops}
+\addbibresource[label=under_review]{under_review}
+
+%Title spacing
+\makeatletter
+\patchcmd{\makehead}{%search
+    \ifthenelse{\equal{\@title}{}}{}{\titlestyle{~|~\@title}}\\%
+    }{%replace
+    \ifthenelse{\equal{\@title}{}}{}{\titlestyle{~|~\@title}}\\[0.5cm]%
+  }{%success
+  }{%failure
+  }
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%   NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Raymond} % Your first name
+\familyname{Lesiyon} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Curriculum  LaTeX Error: Missing \begin{document}.Vitae}
+\address{Aurora Colorado -80011}
+%\mobile{(\#\#\#) \#\#\#-\#\#\#\#}
+\email{raymondlesiyon@cuanschutz.edu}
+% The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+\social[linkedin][https://www.linkedin.com/in/raymond-lesiyon-86a431146/]{raymond-lesiyon}
+\social[github][https://github.com/rlesiyon]{rlesiyon}
+
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+\vspace*{-1.5cm}
+
+%----------------------------------------------------------------------------------------
+%   RESEARCH INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+\section{Research Interests}
+
+\cvitem{Areas of interest}{Computational Biolgy, Natural Language Processing, Large Language Models, Protein Language Models, Knowledge Graphs, Network Analysis}
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+\cventry{2021-2023}{Master of Science in Computational Math Science and Engineering (CMSE)}{Michigan State University}{East Lansing, MI}{\textit{GPA - 3.94}}{} 
+\begin{itemize}
+    \item Coursework: Mathematical Foundation for Data Science, Numerical Linear Algebra, Data Mining, Statistical Genetics, Genomic Data Handling: Unix and Python, Genomics and Sequencing Analysis, RNA-Seq Data Analysis
+\end{itemize}
+\cventry{2017-2021}{B.Sc in Biosystems Engineering | Minor in CMSE}{Michigan State University}{East Lansing, MI}{\textit{GPA - 3.92}}{} 
+\begin{itemize}
+    \item Graduated Magna Cum Laude
+    \item MasterCard Foundation Scholar Program Recipient
+    \item Dean's Honors List : Fall 2021 - Spring 2021
+    \item MasterCard Foundation Scholar Program Recipient, 2017
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   Research experience
+%----------------------------------------------------------------------------------------
+
+\section{Research experience}
+
+\cventry{Aurora, Colorado}{\textsc{University of Colorado, Anschutz}}{Informatic Professional}{2023-Present}{}
+{
+    \cvitem{Labs}{\textbf{JRaviLab}, \small{Department of Biomedical Informatics | CU Anschutz}, \textbf{Wale Lab}, \small{Department of Microbiology - MSU}}
+    \cvitem{Mentors}{Dr. Janani Ravi, Dr. Nina Wale}
+}
+{
+     \cvitem{Project 1}{Evolution of Bacterial Traits in Relation to its Host Association and Pathogenicity}
+    \begin{itemize} 
+        \item Enhanced data integration pipeline using tidyverse to merge 26 bacterial and archaea datasets, significantly improving data quality and accessibility. 
+        \item Boosted database accuracy by integrating BacDive, and BugPhyzz, increasing data completeness from 20 to 50 and enabling superior research outcomes through expert data management. 
+        \item Streamlined phylogenetic regression analysis with modular workflow, accelerating 200+ model iterations and enhancing the understanding of bacterial phenotypes and pathogenicity.
+        \item Implemented advanced statistical analysis using AIC to evaluate and optimize phylogenetic regression, enhancing the accuracy and reliability of evolutionary biology research.
+        \item Collaborated with 3 Principal Investigators to develop a robust bacterial traits analysis, leading to publications in preparation.
+    \end{itemize}
+}
+{
+    \cvitem{Project 2}{microgenomeR R data package development}
+    \begin{itemize} 
+            \item Adapted Austraits multiple datasets integration pipeline to effectively harmonize 26+ microbial datasets into a central source with consistent units and trait values. 
+            \item Facilitated seamless loading of microbial traits data at strain and species levels using parquet and rda file format.
+            \item Integrated a shiny dashboard to facilitate rapid exploratory data analysis with interactive visualization and user-friendly features.
+    \end{itemize}
+}
+
+\cventry{East Lansing}{\textsc{Michigan State University}}{Technical Aide}{Jun 2021- Aug 2021}{}
+{
+    \cvitem{Labs}{\textbf{Steibel Juan Lab}, \small{Department of Animal Science}, MSU}
+    \cvitem{Mentors}{Dr. Steibel Juan}
+    \begin{itemize}
+        \item Leveraged Slurm workload manager for running LSTM deep learning algorithms on high-performance computing clusters, achieving optimized resource utilization and computational efficiency. 
+        \item Fine-tuned m,hyper-parameters for enhanced LSTM deep learning model performance.
+    \end{itemize}
+}
+
+\cventry{East Lansing}{\textsc{Fraunhofer USA Inc.}}{Biosensor Intern}{Jun 2019- Aug 2020}{}
+{
+    \cvitem{Mentors}{Dr. Suzanne Witt}
+    \begin{itemize}
+        \item Designed and implemented a data visualization dashboard with Tkinter and Pandas, streamlining the analysis of data from 37 biosensor fabrication experiments and enhancing decision-making.
+        \item Functionalized antibody biosensor using N-hydroxysuccinimide (NHS) immobilization technique to boron-doped diamond surface for the purpose of detecting COVID-19 spike protein
+        \item Involved in testing immobilized antibody biosensors using electrochemical impedance to ascertain the binding of COVID-19 spike protein.
+    \end{itemize}
+}
+
+\cventry{East Lansing}{\textsc{Michigan State University}}{Undergraduate Research Assistant}{Jun 2019- Aug 2020}{}
+{
+    \cvitem{Labs}{\textbf{MIDI Lab}, \small{Department of Biomedical Engineering}, MSU}
+    \cvitem{Mentors}{Dr. Adam Alessio}
+    \begin{itemize}
+        \item Performed single feature classification on 400 Ovarian torsion datasets using decision trees classifiers, random trees, and logistic regression through Sci-kit learn library in Python
+        \item Employed ROC curve, accuracy, specificity, and sensitivity methodology to access the performance of ovarian data classification model
+    \end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%   SKILL Section
+%----------------------------------------------------------------------------------------
+\section{SKILLS}
+
+\cvitem{Programming Languages}{Python, R, Matlab, C++}
+\cvitem{Computational tools}{Unix/Linux, Git, High-performance computing clusters}
+\cvitem{Methodologies}{Regression, dimensional reduction - Principal Component Analysis(PCA), data analysis \& visualization - tidyvverse, ggplot, pandas}
+
+
+%--------------------------------------------------------------------------------------
+%   Publication
+%--------------------------------------------------------------------------------------
+
+\section{Publications}
+
+\begin{enumerate}
+    \item bacteria-traits in-preparation
+    \item microgenomeR in-preparation
+    \item Junjie Jan, Janice Siegford, Dirk Colbry, \textbf{Raymond Lesiyon}, Anna Bosgraaf, Chen Chen, Tomas Norton, Juan Steibel. Evaluation of Computer Vision for Detecting Agonistic Behaviour of pigs in a Single-SpaceFeeding Stall Through Blocked Cross-Validation Strategies. 10.2139/ssrn.4098711
+    \item Suzanne T Witt, Alexis Rogien, Diana Weiner, James R Siegenthaler, \textbf{Raymond Lesiyon}, Noelle Kurien, Robert Rechenberg, Nina Baule, Aaron Hardy, Michael Becker. Boron doped diamond thin films for the electrochemical detection of SARS-CoV-2 S1 Protein. 10.1016/j.diamond.2021.108542
+\end{enumerate}
+
+%--------------------------------------------------------------------------------------
+%   Presentation
+%--------------------------------------------------------------------------------------
+
+\section{Presentation}
+
+\subsection{Research and Technical Talks} 
+{
+    \begin{itemize}
+        \item {\cvitem{July 24}{\textbf{Bioc2024 International Conference}, microgenomeR an R data package for aggregating microbial phenotypic, \& genotypic trait. \\Val Andel Institute, Grand Rapids Michigan} }
+    \end{itemize}
+}
+
+\subsection{Posters} 
+{
+    \begin{itemize}
+        \item {\cvitem{Aug 24}{\textbf{CU Anschutz Department of Biomedical Informatics Retreat}, Are (bacterial) pathogens special?. \\Aurora, CO} }
+        \item {\cvitem{June 24}{\textbf{Quantitative Cell \& Molecular Biology Symposium}, Are (bacterial) pathogens special?. \\Colorado State University, Fort Collins, CO} }
+        \item {\cvitem{April 24}{\textbf{American Society of Microbiology Rocky Mountain Branch}, Are (bacterial) pathogens special?. \\University of Colorado Boulder, Boulder, CO} }
+    \end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%   Teaching experience
+%----------------------------------------------------------------------------------------
+
+\section{Teaching experience}
+{
+    \cventry{East Lansing}{\textsc{Michigan State University}}{Graduate Teaching Assistant}{Aug 2021- Fall 2023}{Department of Computational Math Science and Eng.}
+    {
+        \cvitem{CMSE 802}{Methods in Computational Modeling}
+        \cvitem{CMSE 202}{Computational Modelling and Data Analysis II}
+    }
+    
+    \cventry{East Lansing}{\textsc{Michigan State University}}{Academic Tutor}{Fall 2019- Fall 2021}{College of Engineering}
+    {
+        \cvitem{}{Student tutor for calculus and physics}
+    }
+}
+
+%----------------------------------------------------------------------------------------
+%  Leadership
+%----------------------------------------------------------------------------------------
+
+\section{Service and Leadership}
+{
+    \cventry{Baringo, Kenya}{\textsc{Kokwa Island Primary School}}{Educational Support Initiative}{Aug 2023}{}
+    {
+        \cvitem{}{Donated uniforms to 11 students from orphaned or low-income families, improving access to education.}
+    }
+    
+    \cventry{East Lansing}{\textsc{Michigan State University}}{Academic Core Lead Tutor}{Spring 2020- Fall 2021}{Department of Computational Math Science and Eng.}
+    {
+        \cvitem{}{Guided others tutors to ensure smooth running of the tutoring center}
+        \cvitem{}{Planned and organized review section for STEM courses before exam}
+    }
+    
+    \cventry{East Lansing}{\textsc{Michigan State University}}{International Orientation Leader }{Aug 2018}{Office of International Students}
+    {
+        \cvitem{}{Guided a group of 10 international students in their first week of enrolling at MSU.}
+    }
+    
+    
+    \cventry{Bomet, Kenya}{\textsc{Kapkures community}}{Maji Safi ni Uhai Initiative}{Oct 2019}{}
+    {
+        \cvitem{}{Co-founderd Maji Safi ni Uhai Initiative, and secured \$4000 from MCF program to drill water kapkures community in Bomet, Kenya.}
+    }
+
+    \cventry{Baringo, Kenya}{\textsc{Baringo South}}{Community Need Assessment Leader}{Mar 2017 - May 2017}{}
+    {
+        \cvitem{}{Lead a group of 10 students from Education and Social Empowerment Program(EaSEP) conduct community need assessment in Ilchamus community. }
+    }
+
+    \cventry{Baringo, Kenya}{\textsc{Kokwa Primary School}}{Volunteer Teacher}{Jan 2016 - June 2016}{}
+    {
+        \cvitem{}{Volunteered to teach STEM classes to grade eight students}
+    }
+    
+    \cventry{Baringo, Kenya}{\textsc{Kokwa Island}}{Community Need Assessment Guide}{Jan 2016}{}
+    {
+        \cvitem{}{Helped in community need assesment in Kokwa Island with patternship with Friends of Kenya Schools and Wildlife (FKSW)}
+    }
+    
+}
+
+\end{document}
