@@ -51,8 +51,7 @@ Mentors: Dr. Janani Ravi, Dr. Nina Wale
 **Project 2:** microgenomeR R data package development
 - Adapted Austraits multiple datasets integration pipeline to harmonize 26+ microbial datasets.
 - Facilitated loading of microbial traits data using parquet and rda file formats.
-- Integrated a Shiny dashboard for rapid exploratory data analysis with interactive visualization.
-
+  
 **Technical Aide**  
 *Michigan State University, East Lansing (Jun 2021- Aug 2021)*  
 Labs: Steibel Juan Lab (Department of Animal Science)  
